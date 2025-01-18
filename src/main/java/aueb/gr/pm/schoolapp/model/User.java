@@ -62,12 +62,19 @@ public class User extends AbstractEntity implements UserDetails {
     @OneToOne(mappedBy = "user")
     private Teacher teacher;
 
+    @OneToOne(mappedBy = "user")
+    private Student student;
+
     public boolean isTeacher(){
         return getTeacher() != null;
     }
 
     public boolean isEmployee() {
         return getEmployee() != null;
+    }
+
+    public boolean isStudent() {
+        return getStudent() != null;
     }
 
     @Override

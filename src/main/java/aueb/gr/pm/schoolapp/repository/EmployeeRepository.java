@@ -1,4 +1,4 @@
-package aueb.gr.pm.schoolapp.model.repository;
+package aueb.gr.pm.schoolapp.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

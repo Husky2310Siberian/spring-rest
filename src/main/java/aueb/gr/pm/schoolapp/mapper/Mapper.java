@@ -1,6 +1,7 @@
 package aueb.gr.pm.schoolapp.mapper;
 
 import aueb.gr.pm.schoolapp.dto.*;
+import aueb.gr.pm.schoolapp.model.Student;
 import org.springframework.stereotype.Component;
 import aueb.gr.pm.schoolapp.model.PersonalInfo;
 import aueb.gr.pm.schoolapp.model.Teacher;
@@ -67,6 +68,58 @@ public class Mapper {
         personalInfoDTO.setAmka(teacher.getPersonalInfo().getAmka());
         personalInfoDTO.setIdentityNumber(teacher.getPersonalInfo().getIdentityNumber());
         dto.setPersonalInfo(personalInfoDTO);
+
+        return dto;
+    }
+
+    public Student mapToStudentEntity (StudentInsertDTO studentInsertDTO){
+        Student student = new Student();
+        student.setActive(studentInsertDTO.getIsActive());
+
+        User user = new User();
+        UserInsertDTO userInsertDTO = new UserInsertDTO();
+        user.setFirstname(userInsertDTO.getFirstname());
+        user.setLastname(userInsertDTO.getLastname());
+        user.setUsername(userInsertDTO.getPassword());
+        user.setPassword(userInsertDTO.getPassword());
+        user.setFatherLastname(userInsertDTO.getFatherLastname());
+        user.setMotherLastname(userInsertDTO.getMotherLastname());
+        user.setFatherName(userInsertDTO.getFatherName());
+        user.setMotherName(userInsertDTO.getMotherName());
+        user.setDateOfBirth(userInsertDTO.getDateOfBirth());
+        user.setGender(userInsertDTO.getGender());
+        user.setRole(userInsertDTO.getRole());
+        user.setIsActive(userInsertDTO.getIsActive());
+        student.setUser(user);
+
+        PersonalInfo personalInfo = new PersonalInfo();
+        PersonalInfoInsetDTO personalInfoInsetDTO = studentInsertDTO.getPersonalInfo();
+        personalInfo.setAmka(personalInfoInsetDTO.getAmka());
+        personalInfo.setIdentityNumber(personalInfoInsetDTO.getIdentifyNumber());
+        personalInfo.setPlaceOfBirth(personalInfo.getPlaceOfBirth());
+        personalInfo.setMunicipalityOfRegistration(personalInfo.getMunicipalityOfRegistration());
+        student.setPersonalInfo(personalInfo);
+
+        return student;
+    }
+
+    public StudentReadOnlyDTO mapToReadOnlyDTO(Student student){
+
+        StudentReadOnlyDTO dto = new StudentReadOnlyDTO();
+        dto.setId(student.getId());
+        dto.setUuid(student.getUuid());
+        dto.setIsActive(student.isActive());
+
+        UserReadOnlyDTO userDTO = new UserReadOnlyDTO();
+        userDTO.setFirstname(student.getUser().getFirstname());
+        userDTO.setLastname(student.getUser().getLastname());
+        userDTO.setVat(student.getUser().getVat());
+        dto.setUser(userDTO);
+
+        PersonalInfoReadOnlyDTO personalInfoReadOnlyDTO = new PersonalInfoReadOnlyDTO();
+        personalInfoReadOnlyDTO.setAmka(student.getPersonalInfo().getAmka());
+        personalInfoReadOnlyDTO.setIdentityNumber(student.getPersonalInfo().getIdentityNumber());
+        dto.setPersonalInfo(personalInfoReadOnlyDTO);
 
         return dto;
     }

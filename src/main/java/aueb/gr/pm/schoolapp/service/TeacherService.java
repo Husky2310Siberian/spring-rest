@@ -8,14 +8,12 @@ import aueb.gr.pm.schoolapp.mapper.Mapper;
 import aueb.gr.pm.schoolapp.model.Attachment;
 import aueb.gr.pm.schoolapp.model.PersonalInfo;
 import aueb.gr.pm.schoolapp.model.Teacher;
-import aueb.gr.pm.schoolapp.model.repository.AttachmentRepository;
-import aueb.gr.pm.schoolapp.model.repository.PersonalInfoRepository;
-import aueb.gr.pm.schoolapp.model.repository.TeacherRepository;
-import aueb.gr.pm.schoolapp.model.repository.UserRepository;
+import aueb.gr.pm.schoolapp.repository.AttachmentRepository;
+import aueb.gr.pm.schoolapp.repository.PersonalInfoRepository;
+import aueb.gr.pm.schoolapp.repository.TeacherRepository;
+import aueb.gr.pm.schoolapp.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,13 +21,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.UUID;
 
 @Service
