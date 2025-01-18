@@ -1,0 +1,19 @@
+2025-01-18 12:40:27 ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Binding to target [Bindable@7c5d1d25 type = org.springframework.boot.autoconfigure.web.servlet.MultipartProperties, value = 'provided', annotations = array<Annotation>[@org.springframework.boot.context.properties.ConfigurationProperties(ignoreInvalidFields=false, ignoreUnknownFields=false, prefix="spring.servlet.multipart", value="spring.servlet.multipart")], bindMethod = JAVA_BEAN] failed:
+
+    Property: spring.servlet.multipart.max-re
+    Value: "quest-size=10MB"
+    Origin: class path resource [application.properties] - 8:33
+    Reason: The elements [spring.servlet.multipart.max-re] were left unbound.
+
+Action:
+
+Update your application's configuration
+
