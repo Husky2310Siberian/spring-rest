@@ -2,6 +2,8 @@ package aueb.gr.pm.schoolapp.service;
 
 import aueb.gr.pm.schoolapp.core.exceptions.AppObjectAlreadyExists;
 import aueb.gr.pm.schoolapp.core.exceptions.AppObjectInvalidArgumentException;
+import aueb.gr.pm.schoolapp.core.filters.TeacherFilters;
+import aueb.gr.pm.schoolapp.core.specifications.TeacherSpecification;
 import aueb.gr.pm.schoolapp.dto.TeacherInsertDTO;
 import aueb.gr.pm.schoolapp.dto.TeacherReadOnlyDTO;
 import aueb.gr.pm.schoolapp.mapper.Mapper;
@@ -18,6 +20,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -36,6 +39,7 @@ public class TeacherService implements ITeacherService {
     private final PersonalInfoRepository personalInfoRepository;
     private final AttachmentRepository attachmentRepository;
     private Mapper mapper;
+
 
     @Transactional(rollbackOn = Exception.class)
     @Override
@@ -104,7 +108,7 @@ public class TeacherService implements ITeacherService {
         return "";
     }
 
-    public Page<TeacherReadOnlyDTO> getPaginatedTeachers(int size , int page){
+    public Page<TeacherReadOnlyDTO> getPaginatedTeachers(int page , int size){
         String defaultSort = "id";
         Pageable pageable = PageRequest.of(page , size , Sort.by(defaultSort).ascending());
         return teacherRepository.findAll(pageable).map(mapper::mapToTeacherReadOnlyDTO);
@@ -115,4 +119,14 @@ public class TeacherService implements ITeacherService {
         Pageable pageable = PageRequest.of(size , page , sort);
         return teacherRepository.findAll(pageable).map(mapper::mapToTeacherReadOnlyDTO);
     }
+
+    private Specification<Teacher> getSpecsFromFilters(TeacherFilters filters) {
+        return Specification
+                .where(TeacherSpecification.teacherStringFieldLike("uuid", filters.getUuid()))
+                .and(TeacherSpecification.teacherUserVatIs(filters.getUserVat()))
+                .and(TeacherSpecification.teacherPersonalInfo(filters.getUserAmka()))
+                .and(TeacherSpecification.teacherUserIsActive(filters.getActive()));
+    }
+
+
 }

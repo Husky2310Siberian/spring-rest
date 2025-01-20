@@ -1,39 +1,14 @@
-2025-01-18 12:40:25 INFO  - HV000001: Hibernate Validator 8.0.2.Final
-2025-01-18 12:40:25 INFO  - Starting SchoolAppApplication using Java 17.0.10 with PID 58872 (/Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest/build/classes/java/main started by vasiliskr in /Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest)
-2025-01-18 12:40:25 INFO  - The following 1 profile is active: "test"
-2025-01-18 12:40:26 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-01-18 12:40:26 INFO  - Finished Spring Data repository scanning in 65 ms. Found 6 JPA repository interfaces.
-2025-01-18 12:40:26 WARN  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2025-01-18 12:40:27 ERROR - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Binding to target [Bindable@7c5d1d25 type = org.springframework.boot.autoconfigure.web.servlet.MultipartProperties, value = 'provided', annotations = array<Annotation>[@org.springframework.boot.context.properties.ConfigurationProperties(ignoreInvalidFields=false, ignoreUnknownFields=false, prefix="spring.servlet.multipart", value="spring.servlet.multipart")], bindMethod = JAVA_BEAN] failed:
-
-    Property: spring.servlet.multipart.max-re
-    Value: "quest-size=10MB"
-    Origin: class path resource [application.properties] - 8:33
-    Reason: The elements [spring.servlet.multipart.max-re] were left unbound.
-
-Action:
-
-Update your application's configuration
-
-2025-01-18 12:41:30 INFO  - HV000001: Hibernate Validator 8.0.2.Final
-2025-01-18 12:41:30 INFO  - Starting SchoolAppApplication using Java 17.0.10 with PID 58907 (/Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest/build/classes/java/main started by vasiliskr in /Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest)
-2025-01-18 12:41:30 INFO  - The following 1 profile is active: "test"
-2025-01-18 12:41:31 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-01-18 12:41:31 INFO  - Finished Spring Data repository scanning in 61 ms. Found 6 JPA repository interfaces.
-2025-01-18 12:41:31 INFO  - Tomcat initialized with port 8080 (http)
-2025-01-18 12:41:32 INFO  - Root WebApplicationContext: initialization completed in 1839 ms
-2025-01-18 12:41:32 INFO  - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-01-18 12:41:32 INFO  - HHH000026: Second-level cache disabled
-2025-01-18 12:41:32 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-01-18 12:41:33 INFO  - HHH10001005: Database info:
+2025-01-20 11:02:36 INFO  - HV000001: Hibernate Validator 8.0.2.Final
+2025-01-20 11:02:36 INFO  - Starting SchoolAppApplication using Java 17.0.10 with PID 69079 (/Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest/build/classes/java/main started by vasiliskr in /Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest)
+2025-01-20 11:02:36 INFO  - The following 1 profile is active: "test"
+2025-01-20 11:02:38 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-20 11:02:39 INFO  - Finished Spring Data repository scanning in 162 ms. Found 6 JPA repository interfaces.
+2025-01-20 11:02:40 INFO  - Tomcat initialized with port 8080 (http)
+2025-01-20 11:02:40 INFO  - Root WebApplicationContext: initialization completed in 3599 ms
+2025-01-20 11:02:41 INFO  - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-20 11:02:41 INFO  - HHH000026: Second-level cache disabled
+2025-01-20 11:02:41 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-20 11:02:42 INFO  - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.39
@@ -41,45 +16,13 @@ Update your application's configuration
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-01-18 12:41:34 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-01-18 12:41:34 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-01-18 12:41:34 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-01-18 12:41:35 WARN  - 
-
-Using generated security password: 286ad317-fd94-40ef-86ca-c5741dff6fa0
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-01-18 12:41:35 INFO  - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2025-01-18 12:41:35 INFO  - Tomcat started on port 8080 (http) with context path '/'
-2025-01-18 12:41:35 INFO  - Started SchoolAppApplication in 5.853 seconds (process running for 6.288)
-2025-01-18 12:46:14 INFO  - Commencing graceful shutdown. Waiting for active requests to complete
-2025-01-18 12:46:16 INFO  - Graceful shutdown complete
-2025-01-18 12:46:16 INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-01-18 17:01:38 INFO  - HV000001: Hibernate Validator 8.0.2.Final
-2025-01-18 17:01:39 INFO  - Starting SchoolAppApplication using Java 17.0.10 with PID 61412 (/Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest/build/classes/java/main started by vasiliskr in /Users/vasiliskr/1.JavaProjectsCodingFactory/spring-rest)
-2025-01-18 17:01:39 INFO  - The following 1 profile is active: "test"
-2025-01-18 17:01:40 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-01-18 17:01:40 INFO  - Finished Spring Data repository scanning in 92 ms. Found 6 JPA repository interfaces.
-2025-01-18 17:01:41 INFO  - Tomcat initialized with port 8080 (http)
-2025-01-18 17:01:42 INFO  - Root WebApplicationContext: initialization completed in 2829 ms
-2025-01-18 17:01:42 INFO  - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-01-18 17:01:42 INFO  - HHH000026: Second-level cache disabled
-2025-01-18 17:01:42 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-01-18 17:01:43 INFO  - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.39
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-01-18 17:01:45 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-01-18 17:01:45 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-01-18 17:01:46 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-01-18 17:01:46 INFO  - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2025-01-18 17:01:47 INFO  - Tomcat started on port 8080 (http) with context path '/'
-2025-01-18 17:01:47 INFO  - Started SchoolAppApplication in 9.384 seconds (process running for 10.272)
-2025-01-18 17:02:43 INFO  - Commencing graceful shutdown. Waiting for active requests to complete
-2025-01-18 17:02:45 INFO  - Graceful shutdown complete
-2025-01-18 17:02:45 INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-20 11:02:44 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-20 11:02:45 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-20 11:02:45 INFO  - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-01-20 11:02:46 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-20 11:02:46 WARN  - One of the patterns in [api/employees/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-01-20 11:02:47 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-01-20 11:02:47 INFO  - Started SchoolAppApplication in 11.63 seconds (process running for 12.514)
+2025-01-20 11:04:08 INFO  - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-20 11:04:10 INFO  - Graceful shutdown complete
+2025-01-20 11:04:10 INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
