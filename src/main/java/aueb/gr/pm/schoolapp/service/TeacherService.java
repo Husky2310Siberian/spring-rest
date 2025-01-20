@@ -2,6 +2,7 @@ package aueb.gr.pm.schoolapp.service;
 
 import aueb.gr.pm.schoolapp.core.exceptions.AppObjectAlreadyExists;
 import aueb.gr.pm.schoolapp.core.exceptions.AppObjectInvalidArgumentException;
+import aueb.gr.pm.schoolapp.core.filters.Paginated;
 import aueb.gr.pm.schoolapp.core.filters.TeacherFilters;
 import aueb.gr.pm.schoolapp.core.specifications.TeacherSpecification;
 import aueb.gr.pm.schoolapp.dto.TeacherInsertDTO;
@@ -28,6 +29,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -118,6 +120,18 @@ public class TeacherService implements ITeacherService {
         Sort sort = Sort.by(Sort.Direction.fromString(sortDirection), sortBy);
         Pageable pageable = PageRequest.of(size , page , sort);
         return teacherRepository.findAll(pageable).map(mapper::mapToTeacherReadOnlyDTO);
+    }
+
+    @org.springframework.transaction.annotation.Transactional
+    public Paginated<TeacherReadOnlyDTO> getTeachersFilteredPaginated(TeacherFilters filters) {
+        var filtered = teacherRepository.findAll(getSpecsFromFilters(filters), filters.getPageable());
+        return new Paginated<>(filtered.map(mapper::mapToTeacherReadOnlyDTO));
+    }
+
+    @org.springframework.transaction.annotation.Transactional
+    public List<TeacherReadOnlyDTO> getTeachersFiltered(TeacherFilters filters) {
+        return teacherRepository.findAll(getSpecsFromFilters(filters))
+                .stream().map(mapper::mapToTeacherReadOnlyDTO).toList();
     }
 
     private Specification<Teacher> getSpecsFromFilters(TeacherFilters filters) {

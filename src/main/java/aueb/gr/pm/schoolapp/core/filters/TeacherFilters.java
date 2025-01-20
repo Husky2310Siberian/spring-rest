@@ -13,10 +13,13 @@ public class TeacherFilters extends GenericFilters {
 
     @Nullable
     private String uuid;
+
     @Nullable
     private String userVat;
+
     @Nullable
     private String userAmka;
+
     @Nullable
     private Boolean active;
 }
