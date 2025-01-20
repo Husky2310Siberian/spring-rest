@@ -43,7 +43,8 @@ public class TeacherRestController {
     public ResponseEntity<TeacherReadOnlyDTO> saveTeacher(
             @Valid
             @RequestPart(name = "teacher")TeacherInsertDTO teacherInsertDTO, MultipartFile amkaFile,
-            BindingResult bindingResult) throws AppObjectInvalidArgumentException , ValidationException , AppObjectAlreadyExists , AppServerException {
+            BindingResult bindingResult) throws AppObjectInvalidArgumentException , ValidationException , AppObjectAlreadyExists
+            , AppServerException {
 
         if(bindingResult.hasErrors()){
             throw new ValidationException(bindingResult);
